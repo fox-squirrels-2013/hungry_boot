@@ -1,14 +1,15 @@
 require 'sinatra/activerecord/rake'
 require './app'
+require 'dotenv/tasks'
 
 namespace :db do
   desc "create the postgres database"
-  task :create do
-    `createdb sinatra_skeleton_dev`
+  task :create => :dotenv do
+    `createdb #{ENV['database']}`
   end
 
   desc "drop the postgres database"
-  task :drop do
-    `dropdb sinatra_skeleton_dev`
+  task :drop => :dotenv do
+    `dropdb #{ENV['database']}`
   end
 end
