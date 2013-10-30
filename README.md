@@ -15,7 +15,7 @@ where [database_name] is the name of your database
 
 - run the following commands:
 ```
-rvm use 2.0.0
+rvm use 1.9.3
 rvm gemset use hungry_boot --create
 bundle
 rake db:create
