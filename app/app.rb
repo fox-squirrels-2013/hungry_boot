@@ -28,3 +28,8 @@ get '/restaurants' do
   @restaurants = Restaurant.all
   erb :restaurant_index
 end
+
+get '/restaurants/:id' do
+  @restaurant = Restaurant.find(params[:id])
+  erb :show_restaurant
+end
