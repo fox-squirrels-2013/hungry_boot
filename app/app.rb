@@ -17,7 +17,7 @@ get '/restaurants/new' do
 end
 
 post '/restaurants' do
-  Restaurant.create name:     params["restaurant"]["name"],
+  Restaurant.create! name:     params["restaurant"]["name"],
                     location: params["restaurant"]["location"]
   flash[:notice] = "The last restaurant recorded is #{params["restaurant"]["name"]}!"
   redirect '/restaurants/new'
