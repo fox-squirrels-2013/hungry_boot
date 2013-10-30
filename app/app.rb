@@ -17,7 +17,8 @@ get '/restaurants/new' do
   erb :new_restaurant
 end
 
-post '/restaurants' do
+post '/restaurants' do 
+  puts params
   r = Restaurant.create! name: params["restaurant"]["name"],
                          location: params["restaurant"]["location"],
                          price_range: params["restaurant"]["price_range"]
