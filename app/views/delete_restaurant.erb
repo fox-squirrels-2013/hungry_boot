@@ -1,0 +1,13 @@
+<!-- # <% #if flash[:notice] %>
+#   <p class="notice"><%=flash[#:notice]%></p>
+# <% #end %> -->
+<!-- 
+# <form method="POST" action="/restaurants/delete/name">
+#   <label>Name:
+#     <input id="name" name="restaurant[name]">
+#   </label>
+#   <button>Delete Restaurant!</button>
+# </form> -->
+
+<%=flash[:notice] = "You deleted a restaurant: #{@r.name}"%>
+  <%@r.destroy%>
