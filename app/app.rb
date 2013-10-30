@@ -7,6 +7,7 @@ Dotenv.load
 
 require 'rack-flash'
 enable :sessions
+set :session_secret, 'SOME LONG STRING TO USE FOR SESSION COOKIE ENCRYPTION'
 use Rack::Flash
 
 ActiveRecord::Base.establish_connection(adapter: 'postgresql',
