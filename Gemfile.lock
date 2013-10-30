@@ -50,6 +50,8 @@ GEM
     rspec-expectations (2.14.3)
       diff-lcs (>= 1.1.3, < 2.0)
     rspec-mocks (2.14.4)
+    shotgun (0.9)
+      rack (>= 1.0)
     shoulda-matchers (2.4.0)
       activesupport (>= 3.0.0)
     sinatra (1.4.3)
@@ -76,6 +78,7 @@ DEPENDENCIES
   rack-flash3
   rack-test
   rspec
+  shotgun
   shoulda-matchers
   sinatra
   sinatra-activerecord
