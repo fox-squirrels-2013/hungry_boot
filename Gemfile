@@ -5,6 +5,7 @@ gem 'sinatra'
 gem 'pg'
 gem 'sinatra-activerecord'
 gem 'rack-flash3'
+gem 'launchy'
 
 group :development do
   gem "shotgun"

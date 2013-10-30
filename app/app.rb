@@ -18,11 +18,19 @@ get '/restaurants/new' do
 end
 
 post '/restaurants' do
+  p params
+  # if save succeeds
+  #   set flash to success message
+  # else
+  #   set flash to error
+  # end
+  # redirect
   r = Restaurant.create! name: params["restaurant"]["name"],
                          location: params["restaurant"]["location"],
                          cuisine: params["restaurant"]["cuisine"]
+p r
   flash[:notice] =
-    "You added a new restaurant: #{r.name}, located at #{r.location} -- nice!"
+    "Restaurant: #{r.name}, Located at #{r.location}, Cuisine: #{r.cuisine}!"
   redirect '/restaurants/new'
 end
 
