@@ -4,6 +4,9 @@ gem 'dotenv'
 gem 'sinatra'
 gem 'pg'
 gem 'sinatra-activerecord'
-gem 'rspec'
-gem 'shoulda-matchers'
-gem 'rack-test'
+
+group :test do
+  gem 'rspec'
+  gem 'shoulda-matchers'
+  gem 'rack-test'
+end
