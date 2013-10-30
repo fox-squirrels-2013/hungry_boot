@@ -1,5 +1,5 @@
 require 'sinatra/activerecord/rake'
-require './app'
+require './app/app'
 require 'dotenv/tasks'
 
 namespace :db do
