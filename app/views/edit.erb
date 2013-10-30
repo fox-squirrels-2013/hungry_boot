@@ -1,0 +1,13 @@
+
+<% if @restaurant %>  
+  <form action="/<%= @restaurant.id %>" method="post" id="edit">  
+    <input type="hidden" name="_method" value="put">  
+    <input name="name" value ="<%= @restaurant.name %>">   
+    <input name="location" value ="<%= @restaurant.location %>"> 
+     <input name="cuisine" value ="<%= @restaurant.cuisine %>"> 
+    <input type="submit">  
+  </form>  
+  <p><a href="delete/<%= @restaurant.id %>">Delete</a></p>  
+<% else %>  
+  <p>restaurant not found.</p>  
+<% end %>  

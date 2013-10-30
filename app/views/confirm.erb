@@ -1,0 +1,8 @@
+<h3> Confirm deletion? </h3>
+<form action="/<%= @restaurant.id %>" method="post" id="edit">  
+  <input type="hidden" name="_method" value="delete">  
+  <span><%= @restaurant.name %><span>
+  <input type="submit">  
+</form>  
+
+

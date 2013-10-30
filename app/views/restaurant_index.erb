@@ -1,4 +1,5 @@
-    <% @restaurants.each do |restaurant| %>
-      #<%= restaurant.id %>: <%= restaurant.name %>
-      <br>
-    <% end %>
+<% @restaurants.each_with_index do |restaurant, index| %>
+  #<%= index + 1 %>: <a href ="<%= restaurant.id %>"> <%= restaurant.name %></a>
+  <span><a href="edit/<%= restaurant.id %>">[edit]</a></span> 
+  <br>
+<% end %>
