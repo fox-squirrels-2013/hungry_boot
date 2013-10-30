@@ -1,4 +1,13 @@
-    <% @restaurants.each do |restaurant| %>
-      #<%= restaurant.id %>: <%= restaurant.name %>
-      <br>
+    <% if @restaurants %>
+      <% @restaurants.each do |restaurant| %>
+        #<%= restaurant.id %>: <%= restaurant.name %> <!-- <a href="">delete</a> -->
+        <%= delete_restaurant_at_id(restaurant.id) %>
+        <br>
+      <% end %>
+    <% else %>
+      <h3>No restaurants to display.</h1>
+    <% end %>
+
+    <% if flash[:notice] %>
+      <p class="notice"><%=flash[:notice]%></p>
     <% end %>
