@@ -1,5 +1,5 @@
-<% unless @last.nil? %>
-  <p>The last restaurant recorded is <%= @last.name %>!</p>
+<% if flash[:notice] %>
+  <p class="notice"><%=flash[:notice]%></p>
 <% end %>
 
 <form method="POST" action="/restaurants">
