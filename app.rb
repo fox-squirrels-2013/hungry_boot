@@ -8,6 +8,6 @@ Dotenv.load
 ActiveRecord::Base.establish_connection(adapter: 'postgresql',
                                         database: ENV['database'])
 
-get '/' do
-  "Hello World!"
+post '/restaurants' do
+  Restaurant.create name: params["name"], location: params["location"]
 end
