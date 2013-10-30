@@ -23,3 +23,8 @@ post '/restaurants' do
     "You added a new restaurant: #{r.name}, located at #{r.location} -- nice!"
   redirect '/restaurants/new'
 end
+
+get '/restaurants' do
+  @restaurants = Restaurant.all
+  erb :restaurant_index
+end
