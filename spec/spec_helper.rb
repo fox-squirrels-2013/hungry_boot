@@ -2,6 +2,10 @@ require './app'
 require 'shoulda-matchers'
 require 'rack/test'
 
+require 'capybara/rspec'
+
+Capybara.app = Sinatra::Application
+
 def app
   Sinatra::Application
 end

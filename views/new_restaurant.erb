@@ -1,0 +1,15 @@
+<% unless @last.nil? %>
+  <p>The last restaurant recorded is <%= @last.name %>!</p>
+<% end %>
+
+<form method="POST" action="/restaurants">
+  <label>Name:
+    <input id="name" name="restaurant[name]">
+  </label>
+
+  <label>location:
+    <input id="location" name="restaurant[location]">
+  </label>
+
+  <button>Record Restaurant!</button>
+</form>
