@@ -1,0 +1,10 @@
+<p>Restaurant edit!</p>
+
+<form method="POST" action="/restaurants/<%= @r.id %>">
+  <label>Name:
+    <input id="name" name="restaurant[name]" type="text">
+    <input type="submit">
+  </label>
+</form>
+
+<!-- params[:id] -->

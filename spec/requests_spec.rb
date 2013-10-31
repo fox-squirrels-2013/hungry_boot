@@ -3,7 +3,8 @@ require 'spec_helper'
 describe "web requests" do
   it "creates a new restaurant" do
     params = { 'restaurant' => {'name' => "Sushiritto",
-                                'location' => "Down on Kearny"} }
+                                'location' => "Down on Kearny",
+                                'cuisine' => "Japanese"} }
     expect {post '/restaurants', params}.to change {Restaurant.all.length}.by(1)
   end
 
@@ -15,7 +16,8 @@ describe "web requests" do
   it "creates a restaurant with a price range" do
     params = { 'restaurant' => {'name' => "Pasilla",
                                 'location' => "on Pine",
-                                'price_range' => 1 } }
+                                'price_range' => 1,
+                                'cuisine' => "Mexican"} }
     post '/restaurants', params
     Restaurant.last.price_range.should == 1
   end
