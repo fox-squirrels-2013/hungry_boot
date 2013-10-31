@@ -12,13 +12,10 @@
 
 ActiveRecord::Schema.define(version: 20131030172839) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
   create_table "restaurants", force: true do |t|
-    t.string  "name"
-    t.string  "location"
-    t.integer "price_range"
+    t.string "name"
+    t.string "location"
+    t.string "price_range"
   end
 
 end
