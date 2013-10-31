@@ -6,6 +6,7 @@ feature "Creating a restaurant" do
     visit '/restaurants/new'
     fill_in "name", with: "Pasilla"
     fill_in "location", with: "Down Pine"
+    fill_in "food_type", with: "Mexican"
     click_on "Record Restaurant!"
 
     expect(page).to have_content("You added a new restaurant: Pasilla")
@@ -19,5 +20,16 @@ feature "Creating a restaurant" do
     click_on "Record Restaurant!"
 
     expect(page).to have_content("Mexican")
+  end
+end
+
+feature "Deleting a Restaurant" do
+  scenario "Guest may delete a restaurant" do
+   r = Restaurant.create(:name => "Pasilla", :price_range =>1, :food_type => "Mexican", :location => "Kearny")
+    visit '/restaurants'
+    click_on "Delete Restaurant!"
+
+
+    expect(page).to have_content("Restaurant # #{r.id} deleted")
   end
 end

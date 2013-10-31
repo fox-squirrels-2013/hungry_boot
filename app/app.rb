@@ -18,7 +18,6 @@ get '/restaurants/new' do
 end
 
 post '/restaurants' do
-  p params
   r = Restaurant.create! name: params["restaurant"]["name"],
                          location: params["restaurant"]["location"],
                          price_range: params["restaurant"]["price_range"],
@@ -37,4 +36,10 @@ end
 get '/restaurants/:id' do
   @restaurant = Restaurant.find(params[:id])
   erb :show_restaurant
+end
+
+delete '/restaurants/delete' do
+  Restaurant.destroy(params[:id])
+  flash[:notice] = "Restaurant # #{params[:id]} deleted"
+  redirect '/restaurants'
 end

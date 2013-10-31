@@ -1,4 +1,15 @@
+<% if flash[:notice] %>
+  <p class="notice"><%=flash[:notice]%></p>
+<% end %>
     <% @restaurants.each do |restaurant| %>
-      #<%= restaurant.id %>: <%= restaurant.name %>
+
+      <h1> TEXT = #<%= restaurant.id %>: <%= restaurant.name %>  </h1>
+        <form action="/restaurants/delete" method="post">
+          <input name="_method" type="hidden" value="delete"/>
+          <input name="id" type="hidden" value= <%= restaurant.id %> > 
+          <input type="submit" value= "Delete Restaurant!">
+        </form>
       <br>
+
     <% end %>
+

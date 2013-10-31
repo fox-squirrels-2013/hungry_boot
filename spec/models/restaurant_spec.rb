@@ -5,6 +5,7 @@ describe Restaurant do
   describe "validations" do
     it { should validate_presence_of :name }
     it { should validate_presence_of :location }
+    it { should validate_presence_of :food_type }
   end
 
 end
