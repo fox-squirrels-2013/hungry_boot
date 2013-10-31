@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131030172839) do
+ActiveRecord::Schema.define(version: 20131031034218) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20131030172839) do
     t.string  "name"
     t.string  "location"
     t.integer "price_range"
+    t.string  "food_type"
   end
 
 end
