@@ -18,12 +18,16 @@ get '/restaurants/new' do
 end
 
 post '/restaurants' do
-  r = Restaurant.create! name: params["restaurant"]["name"],
-                         location: params["restaurant"]["location"],
-                         price_range: params["restaurant"]["price_range"]
-  flash[:notice] =
-    "You added a new restaurant: #{r.name}, located at #{r.location} -- nice!"
-  redirect '/restaurants/new'
+  r = Restaurant.new name: params["restaurant"]["name"],
+                        location: params["restaurant"]["location"],
+                        price_range: params["restaurant"]["price_range"]
+  if r.save
+    flash[:notice] =
+      "You added a new restaurant: #{r.name}, located at #{r.location} -- nice!"
+    redirect '/restaurants/new'
+  else
+    "something went wrong"
+  end
 end
 
 get '/restaurants' do
